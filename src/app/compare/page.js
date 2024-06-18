@@ -304,9 +304,9 @@ export default function Chat() {
   function processIWA(array) {
     let iwa_list = [];
     for (let i = 0; i < array.length; i++) {
-      const iwa_pair = array[i];
-      const result_iwa = iwa_pair[1];
-      iwa_list.push(result_iwa);
+      const iwa_item = array[i];
+      //const result_iwa = iwa_pair[1];
+      iwa_list.push(iwa_item);
     }
     iwa_list = Array.from(new Set(iwa_list));
     console.log(iwa_list, "IWAs");
@@ -421,7 +421,7 @@ export default function Chat() {
         console.log("Response from API:", data);
 
         noOfTasksInQueue = data.no_of_tasks_in_queue; // Update the variable
-
+        console.log("NoOfTasksInQueue:", noOfTasksInQueue)
         if (noOfTasksInQueue > 0) {
           const iwas = data.body;
           const iwa_arr = JSON.parse(iwas);

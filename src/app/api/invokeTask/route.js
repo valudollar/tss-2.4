@@ -34,6 +34,7 @@ export async function POST(req, res) {
 
       // Make the external API call using fetch
       const response = await fetch(
+        //API: TASK MAPPINGS
         "https://vz3v3hxwqd.execute-api.ap-southeast-1.amazonaws.com/dev/postjson",
         requestOptions
       );
